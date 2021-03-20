@@ -1,0 +1,50 @@
+.c-filter {
+  border: 1px solid $black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-bottom: 5px;
+
+  &--disabled::after {
+    content: '';
+  }
+
+  &::after {
+    background-color: rgba($gray-500, 0.6);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.c-filter__items {
+  display: block;
+  text-align: center;
+  font-size: 0;
+}
+
+.c-filter__item {
+  display: inline-block;
+  font-size: $font-size-base;
+  width: 30%;
+}
+
+.c-filter__label {
+  display: block;
+}
+
+@include screen-sm {
+  .c-filter__items {
+    padding: 0 15px;
+  }
+
+  .c-filter__item {
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+      padding-bottom: 5px;
+    }
+  }
+}
